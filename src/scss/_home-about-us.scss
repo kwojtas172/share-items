@@ -1,0 +1,35 @@
+.home-about-us {
+    display: flex;
+    justify-content: space-between;
+    height: 58rem;
+    background-color: $color-1;
+    margin-bottom: 5rem;
+}
+
+.home-about-us__img {
+    background-image: url("../images/People.jpg");
+    width: 58rem;
+}
+
+.home-about-us__text {
+    width: 58rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    img {
+        margin-bottom: 2rem;
+    }
+
+    p {
+        padding: 0 10rem;
+        line-height: 3rem;
+        font-size: 1.5rem;
+    }
+}
