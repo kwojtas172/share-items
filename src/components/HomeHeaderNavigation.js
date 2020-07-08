@@ -21,11 +21,11 @@ export default class HomeHeaderNavigation extends Component {
                     </nav>
                     <nav className="main-header__nav-scroll">
                         <ul>
-                            <li><Link to="#start" className="dark-border" spy={true} smooth={true} duration={500}>Start</Link></li>
-                            <li><Link to="#what-is-going-on" spy={true} smooth={true} duration={500}>O co chodzi?</Link></li>
-                            <li><Link to="#about-us" spy={true} smooth={true} duration={500}>O nas</Link></li>
-                            <li><Link to="#fundation" spy={true} smooth={true} duration={500}>Fundacja i organizacje </Link></li>
-                            <li><Link to="#contact" spy={true} smooth={true} duration={500}>Kontakt</Link></li>
+                            <li><Link to="start" className="dark-border" spy={true} smooth={true} duration={500}>Start</Link></li>
+                            <li><Link to="what-is-going-on" spy={true} smooth={true} duration={500}>O co chodzi?</Link></li>
+                            <li><Link to="about-us" spy={true} smooth={true} duration={500}>O nas</Link></li>
+                            <li><Link to="fundation" spy={true} smooth={true} duration={500}>Fundacja i organizacje </Link></li>
+                            <li><Link to="contact" spy={true} smooth={true} duration={500}>Kontakt</Link></li>
                         </ul>
                     </nav>
                 </div>

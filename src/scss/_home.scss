@@ -1,0 +1,33 @@
+.main-wrapper {
+    width: 118rem;
+    margin: 0 auto;
+}
+
+.decoration-line {
+    margin-top: -15rem;
+}
+
+.basic-btn {
+    text-transform: uppercase;
+    width: 19rem;
+    height: 7.5rem;
+    background-color: #ffffff;
+    font-size: 2rem;
+    margin: 1rem;
+    border: 0.05rem solid $color-5;
+    color: $color-5;
+    cursor: pointer;
+    &:hover {
+        background-color: $color-1;
+    }
+}
+
+.gold-border {
+    border: 0.05rem solid $color-3;
+    padding: 0.5rem;
+}
+
+.dark-border {
+    border: 0.05rem solid $color-5;
+    padding: 0.5rem 1rem;
+}
