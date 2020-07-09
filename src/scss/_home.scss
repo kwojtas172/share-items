@@ -7,7 +7,7 @@
     margin-top: -15rem;
 }
 
-.basic-btn {
+@mixin basic-btn {
     text-transform: uppercase;
     width: 19rem;
     height: 7.5rem;
@@ -20,6 +20,10 @@
     &:hover {
         background-color: $color-1;
     }
+}
+
+.basic-btn {
+    @include basic-btn;
 }
 
 .gold-border {
