@@ -4,6 +4,7 @@ import HomeThreeColumns from "./HomeThreeColumns";
 import HomeFourSteps from "./HomeFourSteps";
 import HomeAboutUs from "./HomeAboutUs";
 import HomeWhoWeHelp from "./HomeWhoWeHelp";
+import HomeFooter from "./HomeFooter";
 
 export default class Home extends Component {
     render() {
@@ -14,6 +15,7 @@ export default class Home extends Component {
                 <HomeFourSteps />
                 <HomeAboutUs />
                 <HomeWhoWeHelp />
+                <HomeFooter />
             </div>
         )
     }
