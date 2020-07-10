@@ -1,6 +1,9 @@
 import React from 'react';
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Logout from "./components/Logout"
 
 
 function App() {
@@ -9,7 +12,9 @@ function App() {
       <div className="main-wrapper">
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="login" />
+        <Route path="/logowanie" component={Login} />
+        <Route path="/rejestracja" component={Register} />
+        <Route path="/wylogowanie" component={Logout} />
       </Switch>
       </div>
     </Router>

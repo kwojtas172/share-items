@@ -11,10 +11,10 @@ export default class HomeHeaderNavigation extends Component {
                     <nav className="main-header__nav-router">
                         <ul>
                             <li>
-                                <NavLink to="login">Zaloguj</NavLink>
+                                <NavLink to="/logowanie">Zaloguj</NavLink>
                             </li>
                             <li>
-                                <NavLink to="register" className="gold-border" >Załóż konto</NavLink>
+                                <NavLink to="/rejestracja" className="gold-border" >Załóż konto</NavLink>
                             </li>
                         </ul>
                     </nav>

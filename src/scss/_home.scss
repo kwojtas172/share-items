@@ -14,7 +14,7 @@
     background-color: #ffffff;
     font-size: 2rem;
     margin: 1rem;
-    border: 0.05rem solid $color-5;
+    border: 0.05rem solid $color-4;
     color: $color-5;
     cursor: pointer;
     &:hover {
@@ -32,6 +32,27 @@
 }
 
 .dark-border {
-    border: 0.05rem solid $color-5;
+    border: 0.05rem solid $color-4;
     padding: 0.5rem 1rem;
+}
+
+.container-nav-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrong-info {
+    color: #dd2727;
+    font-weight: 700;
+    font-size: 0.8rema;
+    margin-top: 0.35rem;
+}
+
+.success-info {
+    color: #2aa130;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 2rem;
+    margin-right: 12rem;
+
 }
