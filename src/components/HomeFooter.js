@@ -12,14 +12,21 @@ export default class HomeFooter extends Component {
             text: ""
         }
     }
+
+    handleSubmit = e => {
+        e.preventDefault();
+        console.log(this.state.name.indexOf(" "))
+        console.log(this.state.email.lastIndexOf("."), this.state.email.length)
+
+    }
     
     render() {
         return (
-            <footer className="home-footer">
+            <footer className="home-footer" id="contact">
                 <div className="home-footer__form">
                     <h3>Skontaktuj się z nami</h3>
                     <img src={image} alt="decoration-line" />
-                    <form className="footer-form">
+                    <form className="footer-form" onSubmit={this.handleSubmit}>
                         <label className="footer-form__name">Wpisz swoje imię<input type="text" placeholder="Imię" onChange={e=>this.setState({name: e.target.value})} /></label>
                         <label className="footer-form__email">Wpisz swój e-mail<input type="e-mail" placeholder="e-mail" onChange={e=>this.setState({email: e.target.value})} /></label>
                         <label className="footer-form__text">Wpisz swoją wiadomość<textarea type="text" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et netus et malesuada fames. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo." onChange={e=>this.setState({text: e.target.value})} /></label>

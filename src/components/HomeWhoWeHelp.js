@@ -3,7 +3,6 @@ import server from "./server.json";
 import image from "../images/Decoration.svg";
 import Pagination from "./Paginations";
 
-// console.log(server)
 
 export default class HomeWhoWeHelp extends Component {
     constructor(props) {
@@ -17,10 +16,6 @@ export default class HomeWhoWeHelp extends Component {
             textForOrganizations: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non curabitur gravida arcu ac. Pretium nibh ipsum consequat nisl vel pretium lectus quam id.",
             textForLocals: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non curabitur gravida arcu ac. Pretium nibh ipsum consequat nisl vel pretium lectus quam id."
         }
-    }
-
-    componentDidMount() {
-        console.log(this.state.data.fundations)
     }
     
     render() {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from "react-router-dom";
 import image from "../images/Decoration.svg";
 import icon1 from "../images/Icon-1.svg";
 import icon2 from "../images/Icon-2.svg";
@@ -33,7 +34,7 @@ export default class HomeFourSteps extends Component {
                         <p>kurier przyjedze w dogodnym terminie</p>
                     </div>
                 </div>
-                <button className="basic-btn">oddaj rzeczy</button>
+                <NavLink to="/logowanie"><button className="basic-btn">oddaj rzeczy</button></NavLink>
             </section>
         )
     }
