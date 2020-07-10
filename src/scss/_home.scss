@@ -40,3 +40,19 @@
     display: flex;
     flex-direction: column;
 }
+
+.wrong-info {
+    color: #dd2727;
+    font-weight: 700;
+    font-size: 0.8rema;
+    margin-top: 0.35rem;
+}
+
+.success-info {
+    color: #2aa130;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 2rem;
+    margin-right: 12rem;
+
+}

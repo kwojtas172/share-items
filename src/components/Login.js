@@ -11,7 +11,7 @@ export default class Login extends Component {
                     <nav className="main-header__nav-router">
                         <ul>
                             <li>
-                                <NavLink to="/logowanie">Zaloguj</NavLink>
+                                <NavLink to="/logowanie" onClick={e=>e.preventDefault()} >Zaloguj</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/rejestracja" className="gold-border" >Załóż konto</NavLink>
@@ -20,11 +20,11 @@ export default class Login extends Component {
                     </nav>
                     <nav className="main-header__nav-scroll">
                         <ul>
-                            <li><NavLink to="/" activeClass="dark-border" spy={true} smooth={true} duration={500}>Start</NavLink></li>
-                            <li><Link to="what-is-going-on" activeClass="dark-border" spy={true} smooth={true} duration={500}>O co chodzi?</Link></li>
-                            <li><Link to="about-us" activeClass="dark-border" spy={true} smooth={true} duration={500}>O nas</Link></li>
-                            <li><Link to="fundation" activeClass="dark-border" spy={true} smooth={true} duration={500}>Fundacja i organizacje </Link></li>
-                            <li><Link to="contact" activeClass="dark-border" spy={true} smooth={true} duration={500}>Kontakt</Link></li>
+                            <li><NavLink to="/" activeclass="dark-border">Start</NavLink></li>
+                            <li><Link to="what-is-going-on" activeclass="dark-border">O co chodzi?</Link></li>
+                            <li><Link to="about-us" activeclass="dark-border">O nas</Link></li>
+                            <li><Link to="fundation" activeclass="dark-border">Fundacja i organizacje </Link></li>
+                            <li><Link to="contact" activeclass="dark-border">Kontakt</Link></li>
                         </ul>
                     </nav>
                 </div>

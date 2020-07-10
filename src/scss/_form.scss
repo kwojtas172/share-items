@@ -28,6 +28,11 @@
         background-color: $color-1;
         font-size: 1.25rem;
 
+        p {
+            margin-left: 3rem;
+            font-size: 1rem;
+        }
+
         span {
             margin-left: 3rem;
         }
@@ -54,7 +59,6 @@
 }
 
 .form-wrapper__btns {
-    // padding: 0 10rem;
     display: flex;
     justify-content: space-between;
 }
