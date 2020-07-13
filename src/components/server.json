@@ -1,7 +1,7 @@
 {
     "fundations": [{"name": "Fundacja 1", "target": "Cel i misja: pomoc ubogim", "items": ["jedzenie", "ubrania", "pieniądze"]}, {"name": "Fundacja 2", "target": "Cel i misja: pomoc bezdomnym", "items": ["jedzenie", "ubrania", "pieniądze"]}, {"name": "Fundacja 3", "target": "Cel i misja: pomoc dzieciom", "items": ["jedzenie", "ubrania", "zabawki"]}, {"name": "Fundacja 4", "target": "Cel i misja: pomoc ubogim", "items": ["jedzenie", "ubrania", "pieniądze"]}, {"name": "Fundacja 5", "target": "Cel i misja: pomoc ubogim", "items": ["jedzenie", "ubrania", "pieniądze"]}, {"name": "Fundacja 6", "target": "Cel i misja: pomoc ubogim", "items": ["jedzenie", "ubrania", "pieniądze"]}, {"name": "Fundacja 7", "target": "Cel i misja: pomoc ubogim", "items": ["jedzenie", "ubrania", "pieniądze"]}, {"name": "Fundacja 8", "target": "Cel i misja: pomoc ubogim", "items": ["jedzenie", "ubrania", "pieniądze"]}
     ],
-    "oranizations": [
+    "organizations": [
         {"name": "Organizacja 1", "target": "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "items": ["ergdfgh", "sgdfg", "sdf"]}, {"name": "Organizacja 2", "target": "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "items": ["fsfd", "gsdgd", "dgd"]}, {"name": "Organizacja 3", "target": "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "items": ["dfgh", "rgfg", "wgerfgh"]}, {"name": "Organizacja 4", "target": "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "items": ["ergdfgh", "sgdfg", "sdf"]}, {"name": "Organizacja 5", "target": "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "items": ["ergdfgh", "sgdfg", "sdf"]}
     ],
     "locals": [

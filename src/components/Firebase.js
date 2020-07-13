@@ -14,8 +14,30 @@ const firebaseConfig = {
   };
   
   
-  const app = firebase.initializeApp(firebaseConfig);
-  const storage = firebase.storage();
-  console.log(storage)
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-  
+const server = firebaseApp.database().ref('share-items');
+server.on("value", function(data) {
+    console.log(data.val());
+}, function (error) {
+    console.log("Error: " + error.code);
+});
+
+
+const firebaseRegister = (email, password) => {
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorCode, errorMessage)
+  });
+}
+
+const firebaseLogin = (email, password) => {
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorCode, errorMessage)
+  });
+}
+
+export {firebaseApp, firebaseRegister, firebaseLogin};

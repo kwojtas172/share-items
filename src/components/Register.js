@@ -3,7 +3,9 @@ import { NavLink } from "react-router-dom";
 import { Link } from 'react-scroll';
 import Form from "./Form";
 
+
 export default class Login extends Component {
+
     render() {
         return (
             <div className="container-nav-form">
@@ -28,7 +30,7 @@ export default class Login extends Component {
                         </ul>
                     </nav>
                 </div>
-                <Form isRegister={true}/>
+                <Form isRegister={true} submitOnRegister={this.props.submitOnRegister}/>
             </div>
         )
     }

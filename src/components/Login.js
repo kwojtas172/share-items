@@ -28,7 +28,7 @@ export default class Login extends Component {
                         </ul>
                     </nav>
                 </div>
-                <Form isLogin={true}/>
+                <Form isLogin={true} submitOnLogin={this.props.submitOnLogin}/>
             </div>
         )
     }

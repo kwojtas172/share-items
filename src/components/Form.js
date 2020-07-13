@@ -45,6 +45,10 @@ export default class Form extends Component {
                 passwordWrongLogin: false
             })
         }
+
+        if(this.state.emailLogin.length > 4 && this.state.emailLogin.indexOf("@") !== -1 && this.state.emailLogin.indexOf(".") !== -1 && this.state.passwordLogin.length > 5) {
+            this.props.submitOnLogin(this.state.emailLogin, this.state.passwordLogin)
+        }
     }
 
 
@@ -86,6 +90,10 @@ export default class Form extends Component {
             this.setState({
                 repeatPasswordWrong: false
             })
+        }
+
+        if(this.state.emailRegister.length > 4 && this.state.emailRegister.indexOf("@") !== -1 && this.state.emailRegister.indexOf(".") !== -1 && this.state.passwordRegister.length > 5 && this.state.passwordRegister.localeCompare(this.state.repeatPassword) === 0) {
+            this.props.submitOnRegister(this.state.emailRegister, this.state.passwordRegister)
         }
     }
     

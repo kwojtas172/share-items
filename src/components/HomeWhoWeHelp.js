@@ -30,7 +30,7 @@ export default class HomeWhoWeHelp extends Component {
                     <button className={this.state.isLocals ? "basic-btn" : " basic-btn non-border-btn"} onClick={()=>this.setState({isFoundations: false, isOrganizations: false, isLocals: true})}>Lokalnym zbiórkom</button>
                 </div>
                 {this.state.isFoundations && <Pagination text={this.state.textForFoundations} data={this.state.data.fundations} />}
-                {this.state.isOrganizations && <Pagination text={this.state.textForOrganizations} data={this.state.data.oranizations}  />}
+                {this.state.isOrganizations && <Pagination text={this.state.textForOrganizations} data={this.state.data.organizations}  />}
                 {this.state.isLocals && <Pagination text={this.state.textForLocals} data={this.state.data.locals}  />}
             </section>
         )
