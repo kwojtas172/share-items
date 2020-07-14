@@ -7,7 +7,7 @@ export default class ShareItemsForm extends Component {
         this.state = {
             currentStep: 1,
             items: [{item: "ubrania, które nadają się do ponownego użycia", isChecked: false}, {item: "ubrania do wyrzucenia", isChecked: false}, {item: "zabawki", isChecked: false}, {item: "książki", isChecked: false}, {item: "inne", isChecked: false}],
-            numberOfBags: 0
+            numberOfBags: "— wybierz —"
         }
     }
 
@@ -61,11 +61,13 @@ export default class ShareItemsForm extends Component {
                             })}
                     </form>
                     )}
+
+
                     {this.state.currentStep === 2 && (
                         <form className="share-items__form__content-step-2">
                             <h4>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h4>
-                            <select>
-                                <option selected value="fsgdgfhmfg"><span></span>Wybierz</option>
+                            <select value={this.state.numberOfBags} onChange={e=>this.setState({numberOfBags: +e.target.value})}>
+                                <option value={this.state.numberOfBags}>{this.state.numberOfBags}</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -74,6 +76,14 @@ export default class ShareItemsForm extends Component {
                             </select>
                         </form>
                     )}
+
+
+                    {this.state.currentStep === 3 && (
+                        <form className="share-items__form__content-step-3">
+
+                        </form>
+                    )}
+
                     <div>
                        {this.state.currentStep > 1 && this.state.currentStep < 5 &&  <button className="basic-btn" onClick={this.handlePreviousStep}>Wstecz</button>}
                        {this.state.currentStep < 5 && <button className="basic-btn" onClick={this.handleNextStep}>Dalej</button>}
