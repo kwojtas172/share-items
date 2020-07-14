@@ -7,7 +7,7 @@ export default class HomeHeader extends Component {
         return (
             <header className="main-header">
                 <HomeHeaderImage />
-                <HomeHeaderNavigation />
+                <HomeHeaderNavigation isLogin={this.props.isLogin} displayName={this.props.displayName} />
             </header>
         )
     }

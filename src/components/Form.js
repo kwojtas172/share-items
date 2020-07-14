@@ -48,6 +48,8 @@ export default class Form extends Component {
 
         if(this.state.emailLogin.length > 4 && this.state.emailLogin.indexOf("@") !== -1 && this.state.emailLogin.indexOf(".") !== -1 && this.state.passwordLogin.length > 5) {
             this.props.submitOnLogin(this.state.emailLogin, this.state.passwordLogin)
+            console.log(this.props.location)
+  
         }
     }
 

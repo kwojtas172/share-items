@@ -10,7 +10,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <HomeHeader />
+                <HomeHeader isLogin={this.props.isLogin} displayName={this.props.displayName} />
                 <HomeThreeColumns />
                 <HomeFourSteps />
                 <HomeAboutUs />

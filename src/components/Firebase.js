@@ -16,12 +16,12 @@ const firebaseConfig = {
   
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-const server = firebaseApp.database().ref('share-items');
-server.on("value", function(data) {
-    console.log(data.val());
-}, function (error) {
-    console.log("Error: " + error.code);
-});
+// const server = firebaseApp.database().ref('share-items');
+// server.on("value", function(data) {
+//     console.log(data.val());
+// }, function (error) {
+//     console.log("Error: " + error.code);
+// });
 
 
 const firebaseRegister = (email, password) => {
@@ -40,4 +40,21 @@ const firebaseLogin = (email, password) => {
   });
 }
 
-export {firebaseApp, firebaseRegister, firebaseLogin};
+
+// let displayName;
+
+const firebaseAuth = () => {firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // displayName = user.displayName
+  } else {
+    // User is signed out.
+    // ...
+  }
+});
+}
+
+
+
+
+
+export {firebaseApp, firebaseRegister, firebaseLogin, firebaseAuth, /* displayName */};

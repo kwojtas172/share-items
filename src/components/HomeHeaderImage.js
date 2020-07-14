@@ -8,3 +8,6 @@ export default class HomeHeaderImage extends Component {
         )
     }
 }
+//przerobic na funkcyjny
+//nie zgadzam sie xD
+//usrState(), useEffrct()
