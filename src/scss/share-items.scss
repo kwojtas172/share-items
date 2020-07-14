@@ -240,3 +240,33 @@
     background-color: transparent;
     margin-left: 2rem;
 }
+
+.share-items__form__content-step-4__form-wrapper {
+    display: flex;
+}
+
+.share-items__form__content-step-4__form-column {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+
+    label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem 0;
+        font-size: 1.2rem;
+
+        input, textarea {
+            height: 2rem;
+            width: 16rem;
+            margin-left: 1rem;
+            background-color: transparent;
+            border: 0.05rem solid $color-4;
+        }
+
+        textarea {
+            height: 7.5rem;
+        }
+    }
+}

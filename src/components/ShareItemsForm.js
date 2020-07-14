@@ -10,7 +10,14 @@ export default class ShareItemsForm extends Component {
             bags: "— wybierz —",
             helpGroups: [{group: "dzieciom", isChecked: false}, {group: "samotnym matkom", isChecked: false}, {group: "bezdomnym", isChecked: false}, {group: "niepełnosprawnym", isChecked: false}, {group: "osobom starszym", isChecked: false}],
             cities: "— wybierz —",
-            localizationSpecific: ""
+            localizationSpecific: "",
+            street: "",
+            city: "",
+            postCode: "",
+            phone: "",
+            date: "",
+            time: "",
+            note: ""
         }
     }
 
@@ -58,15 +65,19 @@ export default class ShareItemsForm extends Component {
     render() {
         return (
             <section className="share-items__form">
-                <div className="share-items__form__header">
+                {this.state.currentStep < 5 && (
+                    <div className="share-items__form__header">
                     <h3>Ważne!</h3>
                     {this.state.currentStep === 1 && <p>Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.</p>}
                     {this.state.currentStep === 2 && <p>Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz <span>tutaj</span></p>}
                     {this.state.currentStep === 3 && <p>Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy.</p>}
                     {this.state.currentStep === 4 && <p>Podaj adres oraz termin odbioru rzeczy.</p>}
                 </div>
+                )}
                 <div className="share-items__form__content">
-                    <h4>Krok {this.state.currentStep}/4</h4>
+                    {this.state.currentStep < 5 && (
+                        <h4>Krok {this.state.currentStep}/4</h4>
+                    )}
                     {this.state.currentStep === 1 && (
                         <form className="share-items__form__content-step-1">
                             {this.state.items.map((item, idx) => {
@@ -114,15 +125,45 @@ export default class ShareItemsForm extends Component {
                                             </label>)
                                 })}
                             </div>
-                            <h4>Wpisz nazwę lokalizacji (opcjonalnie)</h4>
+                            <h4>Wpisz nazwę lokalizacji (opcjonalnie):</h4>
                             <input type="text" className="input-localization" value={this.state.localizationSpecific} onChange={e=>this.setState({localizationSpecific: e.target.value})} />
                         </form>
                     )}
 
                     {this.state.currentStep === 4 && (
                         <form className="share-items__form__content-step-4">
-
+                            <h4>Podaj adres oraz termin odbioru rzeczy przez kuriera</h4>
+                            <div className="share-items__form__content-step-4__form-wrapper">
+                                <div className="share-items__form__content-step-4__form-column">
+                                    <h5>Adres odbioru:</h5>
+                                    <label>Ulica<input type="text" value={this.state.street} onChange={e=>this.setState({street: e.target.value})} /></label>
+                                    <label>Miasto<input type="text" value={this.state.city} onChange={e=>this.state({city: e.target.value})} /></label>
+                                    <label>Kod pocztowy<input value={this.state.postCode} onChange={e=>this.setState({postCode: e.target.value})} /></label>
+                                    <label>Numer telefonu<input value={this.state.phone} onChange={e=> this.setState({phone: e.target.value})} /></label>
+                                </div>
+                                <div className="share-items__form__content-step-4__form-column">
+                                <h5>Termin odbioru:</h5>
+                                    <label>Data<input type="date" value={this.state.date} onChange={e=>this.setState({date: e.target.value})} /></label>
+                                    <label>Godzina<input type="time" value={this.state.time} onChange={e=>this.setState({time: e.target.value})} /></label>
+                                    <label>Uwagi dla kuriera<textarea value={this.state.note} onChange={e=>this.setState({note: e.target.value})} /></label>
+                                </div>
+                            </div>
                         </form>
+                    )}
+
+                    {this.state.currentStep === 5 && (
+                        <div className="share-items__summary">
+                            <h2>Podsumowanie Twojej darowizny</h2>
+                            <div className="share-items__summary__content-with-icons">
+                                <h3>Oddajesz</h3>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div className="share-items__summary__data">
+                                <div className="share-items__summary__data__column"></div>
+                                <div className="share-items__summary__data__column"></div>
+                            </div>
+                        </div>
                     )}
 
                     <div>
