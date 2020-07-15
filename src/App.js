@@ -38,15 +38,17 @@ export default class App extends Component {
 
 
   render() {
+
+    const {isLogin, displayName} = this.state;
     return (
       <Router>
         <div className="main-wrapper">
         <Switch>
-          <Route exact path="/" component={() => <Home isLogin={this.state.isLogin} displayName={this.state.displayName} />} />
-          {!this.state.isLogin && <Route path="/logowanie" component={() => <Login submitOnLogin={this.submitOnLogin} />} />}
+          <Route exact path="/" component={() => <Home isLogin={isLogin} displayName={displayName} />} />
+          {!isLogin && <Route path="/logowanie" component={() => <Login submitOnLogin={this.submitOnLogin} />} />}
           {!this.state.isLogin && <Route path="/rejestracja" component={() => <Register submitOnRegister={this.submitOnRegister} />} />}
-          {!this.state.isLogin && <Route path="/wylogowano" component={Logout} />}
-          {this.state.isLogin && <Route path="/oddaj-rzeczy" component={() => <ShareItems isLogin={this.state.isLogin} displayName={this.state.displayName} />} />}
+          {!isLogin && <Route path="/wylogowano" component={Logout} />}
+          {isLogin && <Route path="/oddaj-rzeczy" component={() => <ShareItems isLogin={isLogin} displayName={displayName} />} />}
         </Switch>
         </div>
       </Router>

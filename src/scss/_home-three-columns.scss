@@ -5,23 +5,23 @@
     margin-bottom: 3rem;
 }
 
-.one-column {
+.home-three-columns__one-column {
     text-align: center;
     color: $color-5;
     margin: 2rem 5rem;
+}
 
-    h2 {
-        margin: 2rem 1rem;
-        font-size: 3rem;
-    }
+.home-three-columns__one-column__primary-title {
+    margin: 2rem 1rem;
+    font-size: 3rem;
+}
 
-    h3 {
-        margin-bottom: 2rem;
-        text-transform: uppercase;
-        font-size: 1.5rem;
-    }
-    p {
-        line-height: 2rem;
-    }
+.home-three-columns__one-column__secondary-title {
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
 
+.home-three-columns__one-column__text {
+    line-height: 2rem;
 }
