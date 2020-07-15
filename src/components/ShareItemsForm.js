@@ -1,4 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import image1 from "../images/Icon-1.svg";
+import image2 from "../images/Icon-4.svg";
+import decoration from "../images/Decoration.svg";
 
 export default class ShareItemsForm extends Component {
 
@@ -137,7 +140,7 @@ export default class ShareItemsForm extends Component {
                                 <div className="share-items__form__content-step-4__form-column">
                                     <h5>Adres odbioru:</h5>
                                     <label>Ulica<input type="text" value={this.state.street} onChange={e=>this.setState({street: e.target.value})} /></label>
-                                    <label>Miasto<input type="text" value={this.state.city} onChange={e=>this.state({city: e.target.value})} /></label>
+                                    <label>Miasto<input type="text" value={this.state.city} onChange={e=>this.setState({city: e.target.value})} /></label>
                                     <label>Kod pocztowy<input value={this.state.postCode} onChange={e=>this.setState({postCode: e.target.value})} /></label>
                                     <label>Numer telefonu<input value={this.state.phone} onChange={e=> this.setState({phone: e.target.value})} /></label>
                                 </div>
@@ -156,19 +159,60 @@ export default class ShareItemsForm extends Component {
                             <h2>Podsumowanie Twojej darowizny</h2>
                             <div className="share-items__summary__content-with-icons">
                                 <h3>Oddajesz</h3>
-                                <div></div>
-                                <div></div>
+                                <div className="share-items__summary__content-with-icons__wrapper">
+                                    <img src={image1} alt="shirt-icon" />
+                                    <p>
+                                        <span>
+                                            {this.state.bags} {this.state.bags === 1 ? "worek" : "work"}{this.state.bags === 0 || this.state.bags === 5 ? "ów" : ""}{this.state.bags === 2 || this.state.bags === 3 || this.state.bags === 4 ? "i" : ""},
+                                        </span>
+                                        {this.state.items.filter(item => item.isChecked)
+                                        .map((item, idx) => {
+                                            return <span key={idx}> {item.item},</span>
+                                        })}
+                                        {this.state.helpGroups.filter(group => group.isChecked)
+                                        .map((group, idx) => {
+                                            return <span key={idx}> {group.group},</span>
+                                        })}
+                                    </p>
+                                </div>
+                                <div className="share-items__summary__content-with-icons__wrapper">
+                                    <img src={image2} alt="recycling-icon" />
+                                    <p>
+                                        <span>Dla lokalizacji:</span>
+                                        <span> {this.state.cities}</span>
+                                    </p>
+                                </div>
                             </div>
                             <div className="share-items__summary__data">
-                                <div className="share-items__summary__data__column"></div>
-                                <div className="share-items__summary__data__column"></div>
+                                <div className="share-items__summary__data__column">
+                                    <h4>Adres odbioru:</h4>
+                                    <p><span>Ulica</span><span>{this.state.street}</span></p>
+                                    <p><span>Miasto</span><span>{this.state.cities}</span></p>
+                                    <p><span>Kod pocztowy</span><span>{this.state.postCode}</span></p>
+                                    <p><span>Numer telefonu</span><span>{this.state.phone}</span></p>
+                                </div>
+                                <div className="share-items__summary__data__column">
+                                    <h4>Termin odbioru</h4>
+                                    <p><span>Data</span><span>{this.state.date}</span></p>
+                                    <p><span>Godzina</span><span>{this.state.time}</span></p>
+                                    <p><span>Uwagi do kuriera</span><span>{this.state.note}</span></p>
+                                </div>
                             </div>
                         </div>
                     )}
 
+                    {this.state.currentStep === 6 && (
+                        <div className="share-items__thanks-you">
+                            <h3>
+                                Dziękujemy za przesłanie formularza, na maila prześlemy wszelkie informacje o odbiorze.
+                            </h3>
+                            <img src={decoration} alt="decoration-line" />
+                        </div>
+                    )}
+
                     <div>
-                       {this.state.currentStep > 1 && this.state.currentStep < 5 &&  <button className="basic-btn" onClick={this.handlePreviousStep}>Wstecz</button>}
-                       {this.state.currentStep < 5 && <button className="basic-btn" onClick={this.handleNextStep}>Dalej</button>}
+                       {this.state.currentStep > 1 && this.state.currentStep < 6 &&  <button className="basic-btn" onClick={this.handlePreviousStep}>Wstecz</button>}
+                       {this.state.currentStep < 6 && <button className="basic-btn" onClick={this.handleNextStep}>{this.state.currentStep === 5 ? "Potwierdź" : "Dalej"}</button>}
                      </div>
                 </div>
             </section>
