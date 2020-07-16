@@ -87,7 +87,7 @@
 
 .share-items__form__content {
     background-image: url("../images/Background-Form.jpg");
-    height: 55rem;
+    height: 60rem;
 }
 
 .share-items__form__content__title {
@@ -162,9 +162,14 @@
     display: none; 
 }
 
-.share-items__form__content-step-3__title {
+@mixin form-title {
     height: 2rem;
-    font-size: 700;
+    font-weight: 700;
+    margin: 2rem;
+}
+
+.share-items__form__content-step-3__title {
+    @include form-title;
 }
 
 .share-items__form__content-step-3__select {
@@ -183,54 +188,6 @@
     display: flex;
     flex-wrap: wrap;
     width: 60rem;
-
-    // label {
-        // display: flex;
-        // align-items: center;
-        // font-size: 1.2rem;
-        // margin: 2rem;
-        // line-height: 3rem;
-        // position: relative;
-        // text-align: center;
-
-
-        
-        // &:before {
-        //     position: absolute;
-        //     opacity: 1;
-        //     content: "";
-        //     width: 15rem;
-        //     height: 3rem;
-        //     top: 0.1875rem;
-        //     left: 0;
-        //     right: 0;
-        //     bottom: 0;
-        //     background-color: transparent;
-        //     border: 0.05rem solid $color-4;
-    
-        // }
-
-    //     span {
-    //         position: absolute;
-    //         top: 0;
-    //         left: 0;
-    //         right: 0;
-    //         bottom: 0;
-    //         z-index: 1;
-    //     }
-    
-    // }
-
-    
-
-    // input[type="checkbox"] {
-    //     padding: 2rem;
-    //     width: 15rem;
-    //     height: 3rem;
-    //     z-index: 1;
-    //     opacity: 0;
-        
-    // }
 }
 
 .share-items__form__content-step-3__checkboxes__label {
@@ -238,7 +195,6 @@
     align-items: center;
     font-size: 1.2rem;
     margin: 2rem;
-    line-height: 3rem;
     position: relative;
     text-align: center;
 }
@@ -277,16 +233,18 @@
     right: 0;
     bottom: 0;
     z-index: 1;
+    line-height: 3.5rem;
 }
 
-.input-localization {
+.share-items__form__content-step-3__input-localization {
     width: 40rem;
     height: 2rem;
     background-color: transparent;
-    margin-left: 2rem;
+    margin: 0 0 2rem 2rem;
+    border: 0.05rem solid $color-4;
 }
 
-.share-items__form__content-step-4__form-wrapper {
+.share-items__form__content-step-4__form {
     display: flex;
 }
 
@@ -294,33 +252,77 @@
     display: flex;
     flex-direction: column;
     margin-left: 5rem;
-
-    label {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 1rem 0;
-        font-size: 1.2rem;
-
-        input, textarea {
-            height: 2rem;
-            width: 16rem;
-            margin-left: 1rem;
-            background-color: transparent;
-            border: 0.05rem solid $color-4;
-        }
-
-        textarea {
-            height: 7.5rem;
-        }
-    }
 }
 
-.share-items__summary__content-with-icons__wrapper {
+.share-items__form__content-step-4__title {
+    @include form-title;
+}
+
+.share-items__form__content-step-4__form-column__title {
+    font-weight: 700;
+}
+
+.share-items__form__content-step-4__form-column__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.share-items__form__content-step-4__form-column__label__input {
+    height: 2rem;
+    width: 16rem;
+    margin-left: 1rem;
+    background-color: transparent;
+    border: 0.05rem solid $color-4;
+}
+
+.share-items__form__content-step-4__form-column__label__input--textarea {
+    height: 7.5rem;
+}
+
+.share-items__summary__content-with-icons__main {
     display: flex;
     align-items: center;
+    margin: 2rem
 }
 
 .share-items__summary__data {
     display: flex;
+}
+
+.share-items__summary__title {
+    @include form-title;
+    font-size: 2rem;
+    padding-top: 3rem;
+}
+
+.share-items__summary__content-with-icons__title {
+    @include form-title;
+}
+
+.share-items__summary__data__column__title {
+    @include form-title;
+    margin: 1rem;
+}
+
+.share-items__summary__data__column {
+    margin: 2rem;
+}
+
+.share-items__summary__data__column__paragraph {
+    padding: 1rem;
+}
+
+.share-items__thanks-you__title {
+    @include form-title;
+    font-size: 2.5rem;
+    width: 50rem;
+    text-align: center;
+    padding: 10rem;
+}
+
+.share-items__thanks-you__img {
+    padding-left: 29rem;
 }

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import image1 from "../images/Icon-1.svg";
-import image2 from "../images/Icon-4.svg";
 import decoration from "../images/Decoration.svg";
 import ShareItemsFormStep1 from "./ShareItemsFormStep1";
 import ShareItemsFormStep2 from "./ShareItemsFormStep2";
 import ShareItemsFormStep3 from "./ShareItemsFormStep3";
+import ShareItemsFormStep4 from "./ShareItemsFormStep4";
+import ShareItemsFormSummary from "./ShareItemsFormSummary";
 
 export default class ShareItemsForm extends Component {
 
@@ -33,19 +33,16 @@ export default class ShareItemsForm extends Component {
             currentStep: this.state.currentStep + 1
         })
     }
-
     handlePreviousStep = e => {
         e.preventDefault();
         this.setState({
             currentStep: this.state.currentStep - 1
         })
     }
-
     addItem = e => {
         let tempArr = [...this.state.items]
         if(e.target.checked) {
             tempArr[e.target.name].isChecked = true
-            
         } else {
             tempArr[e.target.name].isChecked = false
         }
@@ -53,19 +50,16 @@ export default class ShareItemsForm extends Component {
             items: tempArr
         })
     }
-
-    chooseBags = num => {
+    chooseBags = e => {
         this.setState({
-            bags: num
+            bags: +e.target.value
         })
     }
-
     chooseFromCities = city => {
         this.setState({
             cities: city
         })
     }
-
     addGroup = e => {
         let tempArr = [...this.state.helpGroups]
         if(e.target.checked) {
@@ -78,13 +72,46 @@ export default class ShareItemsForm extends Component {
             helpGroups: tempArr
         })
     }
-
     changeLocalizationSpecific = e => {
         this.setState({
             localizationSpecific: e.target.value
         })
     }
-
+    changeCity = e => {
+        this.setState({
+            city: e.target.value
+        })
+    }
+    changeStreet = e => {
+        this.setState({
+            street: e.target.value
+        })
+    }
+    changePostCode = e => {
+        this.setState({
+            postCode: e.target.value
+        })
+    }
+    changePhone = e => {
+        this.setState({
+            phone: e.target.value
+        })
+    }
+    changeDate = e => {
+        this.setState({
+            date: e.target.value
+        })
+    }
+    changeTime = e => {
+        this.setState({
+            time: e.target.value
+        })
+    }
+    changeNote = e => {
+        this.setState({
+            note: e.target.value
+        })
+    }
 
     render() {
         const {currentStep, items, bags, helpGroups, cities, localizationSpecific, street, city, postCode, phone, date, time, note} = this.state;
@@ -101,118 +128,20 @@ export default class ShareItemsForm extends Component {
                 )}
                 <div className="share-items__form__content">
                     {currentStep < 5 && (
-                        <h4 className="share-items__form__content__title">Krok {currentStep}/4</h4>
-                    )}
+                        <h4 className="share-items__form__content__title">Krok {currentStep}/4</h4>)}
                     {currentStep === 1 && <ShareItemsFormStep1 addItem={this.addItem} items={items} />}
-
-
                     {currentStep === 2 && <ShareItemsFormStep2 bags={bags} chooseBags={this.chooseBags} addGroup={this.addGroup} />}
-
-
-                    {currentStep === 3 && <ShareItemsFormStep3 cities={cities} helpGroups={helpGroups} localizationSpecific={localizationSpecific} addGroup={this.addGroup} chooseFromCities={this.chooseFromCities} changeLocalizationSpecific={this.changeLocalizationSpecific} />
-                    // (
-                    //     <form className="share-items__form__content-step-3">
-                    //         <h4>Lokalizacja:</h4>
-                    //         <select value={cities} onChange={e=>this.setState({cities: e.target.value})}>
-                    //             <option value={cities}>{cities}</option>
-                    //             <option value="Poznań">Poznań</option>
-                    //             <option value="Warszawa">Warszawa</option>
-                    //             <option value="Kraków">Kraków</option>
-                    //             <option value="Wrocław">Wrocław</option>
-                    //             <option value="Katowice">Katowice</option>
-                    //         </select>
-                    //         <h5>Komu chcesz pomóc</h5>
-                    //         <div className="share-items__form__content-step-3__wrapper-checkboxes">
-                    //             {helpGroups.map((people, idx) => {
-                    //                 return (
-                    //                     <label key={idx} className={people.isChecked ? "label-checked" : ""}>
-                    //                         <input type="checkbox" name={idx} defaultChecked={people.isChecked} value={people.group} onClick={e => this.addGroup(e)} /><span>{people.group}</span>
-                    //                         </label>)
-                    //             })}
-                    //         </div>
-                    //         <h4>Wpisz nazwę lokalizacji (opcjonalnie):</h4>
-                    //         <input type="text" className="input-localization" value={localizationSpecific} onChange={e=>this.setState({localizationSpecific: e.target.value})} />
-                    //     </form>
-                    // )
-                    }
-
-                    {currentStep === 4 && (
-                        <form className="share-items__form__content-step-4">
-                            <h4>Podaj adres oraz termin odbioru rzeczy przez kuriera</h4>
-                            <div className="share-items__form__content-step-4__form-wrapper">
-                                <div className="share-items__form__content-step-4__form-column">
-                                    <h5>Adres odbioru:</h5>
-                                    <label>Ulica<input type="text" value={street} onChange={e=>this.setState({street: e.target.value})} /></label>
-                                    <label>Miasto<input type="text" value={city} onChange={e=>this.setState({city: e.target.value})} /></label>
-                                    <label>Kod pocztowy<input value={postCode} onChange={e=>this.setState({postCode: e.target.value})} /></label>
-                                    <label>Numer telefonu<input value={phone} onChange={e=> this.setState({phone: e.target.value})} /></label>
-                                </div>
-                                <div className="share-items__form__content-step-4__form-column">
-                                <h5>Termin odbioru:</h5>
-                                    <label>Data<input type="date" value={date} onChange={e=>this.setState({date: e.target.value})} /></label>
-                                    <label>Godzina<input type="time" value={time} onChange={e=>this.setState({time: e.target.value})} /></label>
-                                    <label>Uwagi dla kuriera<textarea value={note} onChange={e=>this.setState({note: e.target.value})} /></label>
-                                </div>
-                            </div>
-                        </form>
-                    )}
-
-                    {currentStep === 5 && (
-                        <div className="share-items__summary">
-                            <h2>Podsumowanie Twojej darowizny</h2>
-                            <div className="share-items__summary__content-with-icons">
-                                <h3>Oddajesz</h3>
-                                <div className="share-items__summary__content-with-icons__wrapper">
-                                    <img src={image1} alt="shirt-icon" />
-                                    <p>
-                                        <span>
-                                            {bags} {bags === 1 ? "worek" : "work"}{this.state.bags === 0 || bags === 5 ? "ów" : ""}{bags === 2 || bags === 3 || bags === 4 ? "i" : ""},
-                                        </span>
-                                        {items.filter(item => item.isChecked)
-                                        .map((item, idx) => {
-                                            return <span key={idx}> {item.item},</span>
-                                        })}
-                                        {helpGroups.filter(group => group.isChecked)
-                                        .map((group, idx) => {
-                                            return <span key={idx}> {group.group},</span>
-                                        })}
-                                    </p>
-                                </div>
-                                <div className="share-items__summary__content-with-icons__wrapper">
-                                    <img src={image2} alt="recycling-icon" />
-                                    <p>
-                                        <span>Dla lokalizacji:</span>
-                                        <span> {cities}</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="share-items__summary__data">
-                                <div className="share-items__summary__data__column">
-                                    <h4>Adres odbioru:</h4>
-                                    <p><span>Ulica</span><span>{street}</span></p>
-                                    <p><span>Miasto</span><span>{cities}</span></p>
-                                    <p><span>Kod pocztowy</span><span>{postCode}</span></p>
-                                    <p><span>Numer telefonu</span><span>{phone}</span></p>
-                                </div>
-                                <div className="share-items__summary__data__column">
-                                    <h4>Termin odbioru</h4>
-                                    <p><span>Data</span><span>{date}</span></p>
-                                    <p><span>Godzina</span><span>{time}</span></p>
-                                    <p><span>Uwagi do kuriera</span><span>{note}</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    )}
-
+                    {currentStep === 3 && <ShareItemsFormStep3 cities={cities} helpGroups={helpGroups} localizationSpecific={localizationSpecific} addGroup={this.addGroup} chooseFromCities={this.chooseFromCities} changeLocalizationSpecific={this.changeLocalizationSpecific} />}
+                    {currentStep === 4 && <ShareItemsFormStep4 city={city} street={street} postCode={postCode} phone={phone} date={date} time={time} note={note} changeCity={this.changeCity} changeStreet={this.changeStreet} changePostCode={this.changePostCode} changePhone={this.changePhone} changeDate={this.changeDate} changeTime={this.changeTime} changeNote={this.changeNote} />}
+                    {currentStep === 5 && <ShareItemsFormSummary bags={bags} items={items} helpGroups={helpGroups} cities={cities} street={street} city={city} postCode={postCode} phone={phone} date={date} time={time} note={note}  />}
                     {currentStep === 6 && (
                         <div className="share-items__thanks-you">
-                            <h3>
+                            <h3 className="share-items__thanks-you__title">
                                 Dziękujemy za przesłanie formularza, na maila prześlemy wszelkie informacje o odbiorze.
                             </h3>
-                            <img src={decoration} alt="decoration-line" />
+                            <img src={decoration} alt="decoration-line" className="share-items__thanks-you__img" />
                         </div>
                     )}
-
                     <div>
                        {currentStep > 1 && currentStep < 6 &&  <button className="basic-btn share-items__form__content__btn" onClick={this.handlePreviousStep}>Wstecz</button>}
                        {currentStep < 6 && <button className="basic-btn share-items__form__content__btn" onClick={this.handleNextStep}>{currentStep === 5 ? "Potwierdź" : "Dalej"}</button>}

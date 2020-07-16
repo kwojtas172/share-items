@@ -25,7 +25,7 @@ export default class ShareItemsFormStep3 extends Component {
                                 })}
                             </div>
                             <h4 className="share-items__form__content-step-3__title">Wpisz nazwę lokalizacji (opcjonalnie):</h4>
-                            <input type="text" className="input-localization" value={localizationSpecific} onChange={e=>changeLocalizationSpecific(e)} />
+                            <input type="text" className="share-items__form__content-step-3__input-localization" value={localizationSpecific} onChange={e=>changeLocalizationSpecific(e)} />
                         </form>
         )
     }
