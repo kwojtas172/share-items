@@ -132,6 +132,14 @@ export default class Form extends Component {
                     </form>
                 </div>
             )
+        } if(!this.props.isLogin) {
+            return (
+                <div className="logout-content">
+                    <h2>Zalogowanie nastąpiło <br></br><span>pomyślnie!</span></h2>
+                    <img src={image} alt="decoration-line" />
+                    <NavLink to="/"><button className="basic-btn">Strona główna</button></NavLink>
+                </div>
+            )
         }
     }
 }

@@ -30,7 +30,7 @@ export default class Login extends Component {
                         </ul>
                     </nav>
                 </div>
-                <Form isLogin={true} submitOnLogin={submitOnLogin}/>
+                <Form isLogin={!isLogin} submitOnLogin={submitOnLogin}/>
             </div>
         )
     }
