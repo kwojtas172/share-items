@@ -13,7 +13,7 @@ export default class HomeFourSteps extends Component {
                 <h2>Wystarczą 4 proste kroki</h2>
                 <img src={image} alt="line-decoration" />
                 <div className="four-steps__wrapper">
-                    <div className="four-steps__wrapper__content">
+                    <div className="four-steps__wrapper__content"> 
                         <img src={icon1} alt="koszulka" />
                         <h3>Wybierz rzeczy</h3>
                         <p>ubrania, zabawki, sprzęt i inne</p>

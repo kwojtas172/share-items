@@ -53,8 +53,6 @@ export default class Form extends Component {
         }
     }
 
-    //final form
-
 
     handleSumitRegister = e => {
         e.preventDefault();
@@ -102,7 +100,7 @@ export default class Form extends Component {
     }
     
     
-    render() {//kompozyji - this.props.children
+    render() {
         if(this.props.isLogin) {
             return (
                 <div className="form-wrapper">
