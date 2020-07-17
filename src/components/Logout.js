@@ -16,7 +16,7 @@ export default class LogOut extends Component {
                                 <NavLink to={isLogin ? "/oddaj-rzeczy" : "/logowanie"} className={isLogin ? "main-header__nav-router__list__element__link gold-border" : "main-header__nav-router__list__element__link"}>{isLogin ? "Oddaj rzeczy" : "Zaloguj"}</NavLink>
                             </li>
                             <li className="main-header__nav-router__list__element">
-                                <NavLink to={isLogin ? "/wylogowano" : "/rejestracja"} className={isLogin ? "main-header__nav-router__list__element__link" : "main-header__nav-router__list__element__link gold-border"} >{isLogin ? "Wyloguj" : "Załóż konto"}</NavLink>
+                                <NavLink to={isLogin ? "/wylogowano" : "/rejestracja"} className={isLogin ? "main-header__nav-router__list__element__link" : "main-header__nav-router__list__element__link gold-border"} onClick={isLogin ? this.props.logout : null} >{isLogin ? "Wyloguj" : "Załóż konto"}</NavLink>
                             </li>
                         </ul>
                     </nav>

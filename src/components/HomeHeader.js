@@ -4,11 +4,11 @@ import HomeHeaderNavigation from "./HomeHeaderNavigation";
 
 export default class HomeHeader extends Component {
     render() {
-        const {isLogin, displayName} = this.props;
+        const {isLogin, displayName, logout} = this.props;
         return (
             <header className="main-header">
                 <HomeHeaderImage />
-                <HomeHeaderNavigation isLogin={isLogin} displayName={displayName} />
+                <HomeHeaderNavigation isLogin={isLogin} displayName={displayName} logout={logout}/>
             </header>
         )
     }
