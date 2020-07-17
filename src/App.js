@@ -11,7 +11,7 @@ import 'firebase/auth';
 import 'firebase/database';
 
 
-import {firebaseConfig} from "./components/firebase";
+import {firebaseConfig} from "./components/Firebase";
   
 
 
