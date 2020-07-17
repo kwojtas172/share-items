@@ -29,9 +29,10 @@ export default class App extends Component {
   componentDidMount() {
     firebase.initializeApp(firebaseConfig);
       firebase.auth().onAuthStateChanged(user => {
-        user ?
-        this.setState({isLogin: true, displayName: user.email})
-        : this.setState({isLogin: false, displayName: null})
+        this.setState({
+          isLogin: user ? true : false,
+          displayName: user ? user.email : null
+        })
       });    
   }
 
@@ -63,7 +64,6 @@ export default class App extends Component {
 
   submitOnLogout = () => {
     firebase.auth().signOut().then(() => {
-      // Sign-out successful.
       console.log("wylogowano")
       this.setState({
         isLogin: false,
@@ -83,8 +83,8 @@ export default class App extends Component {
         <div className="main-wrapper">
         <Switch>
           <Route exact path="/" component={() => <Home isLogin={isLogin} displayName={displayName} logout={this.submitOnLogout} />} />
-          <Route path="/logowanie" component={() => <Login submitOnLogin={this.submitOnLogin} isLogin={isLogin} displayName={displayName} />} />
-          {!this.state.isLogin && <Route path="/rejestracja" component={() => <Register submitOnRegister={this.submitOnRegister} />} />}
+          <Route path="/logowanie" component={() => <Login submitOnLogin={this.submitOnLogin} isLogin={isLogin} logout={this.submitOnLogout} displayName={displayName} />} />
+          <Route path="/rejestracja" component={() => <Register submitOnRegister={this.submitOnRegister} logout={this.submitOnLogout} isLogin={isLogin} displayName={displayName} />} />
           {!isLogin && <Route path="/wylogowano" component={Logout} />}
           {isLogin && <Route path="/oddaj-rzeczy" component={() => <ShareItems isLogin={isLogin} displayName={displayName} logout={this.submitOnLogout} />} />}
         </Switch>

@@ -6,6 +6,14 @@ import Form from "./Form";
 
 export default class Login extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            isRegisterSuccess: "Konto zostało utworzone"
+        }
+    }
+    
+
     render() {
         const {isLogin, displayName, submitOnRegister} = this.props;
         return (
@@ -18,7 +26,7 @@ export default class Login extends Component {
                                 <NavLink to={isLogin ? "/oddaj-rzeczy" : "/logowanie"} className={isLogin ? "main-header__nav-router__list__element__link gold-border" : "main-header__nav-router__list__element__link"}>{isLogin ? "Oddaj rzeczy" : "Zaloguj"}</NavLink>
                             </li>
                             <li className="main-header__nav-router__list__element">
-                                <NavLink to={isLogin ? "/wylogowano" : "/rejestracja"} className={isLogin ? "main-header__nav-router__list__element__link" : "main-header__nav-router__list__element__link gold-border"} >{isLogin ? "Wyloguj" : "Załóż konto"}</NavLink>
+                                <NavLink to={isLogin ? "/wylogowano" : "/rejestracja"} className={isLogin ? "main-header__nav-router__list__element__link" : "main-header__nav-router__list__element__link gold-border"} onClick={isLogin ? this.props.logout : null} >{isLogin ? "Wyloguj" : "Załóż konto"}</NavLink>
                             </li>
                         </ul>
                     </nav>
@@ -32,7 +40,7 @@ export default class Login extends Component {
                         </ul>
                     </nav>
                 </div>
-                <Form isRegister={true} submitOnRegister={submitOnRegister}/>
+                <Form isRegister={!isLogin} communicate={this.state.isRegisterSuccess} submitOnRegister={submitOnRegister}/>
             </div>
         )
     }
