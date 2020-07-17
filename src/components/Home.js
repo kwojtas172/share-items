@@ -5,12 +5,12 @@ import HomeFourSteps from "./HomeFourSteps";
 import HomeAboutUs from "./HomeAboutUs";
 import HomeWhoWeHelp from "./HomeWhoWeHelp";
 import HomeFooter from "./HomeFooter";
-
 export default class Home extends Component {
     render() {
+        const {isLogin, displayName, logout} = this.props;
         return (
             <div>
-                <HomeHeader />
+                <HomeHeader isLogin={isLogin} displayName={displayName} logout={logout} />
                 <HomeThreeColumns />
                 <HomeFourSteps />
                 <HomeAboutUs />
