@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class ShareItemsFormStep2 extends Component {
     render() {
-        const {bags, chooseBags} = this.props;
+        const {bags, chooseBags, warningInfo} = this.props;
         return (
             <form className="share-items__form__content-step-2">
                 <h4 className="share-items__form__content__title">Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h4>
@@ -14,6 +14,7 @@ export default class ShareItemsFormStep2 extends Component {
                     <option value="4" className="share-items__form__content-step-2__select__option">4</option>
                     <option value="5" className="share-items__form__content-step-2__select__option">5</option>
                 </select>
+        <       p className="wrong-info steps">{warningInfo}</p>
             </form>
         )
     }

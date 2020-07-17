@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class ShareItemsFormStep3 extends Component {
     
     render() {
-        const {cities, helpGroups, localizationSpecific, addGroup, chooseFromCities, changeLocalizationSpecific} = this.props;
+        const {cities, helpGroups, localizationSpecific, addGroup, chooseFromCities, changeLocalizationSpecific, warningInfo} = this.props;
         return (
             <form className="share-items__form__content-step-3">
                             <h4 className="share-items__form__content-step-3__title">Lokalizacja:</h4>
@@ -26,6 +26,7 @@ export default class ShareItemsFormStep3 extends Component {
                             </div>
                             <h4 className="share-items__form__content-step-3__title">Wpisz nazwę lokalizacji (opcjonalnie):</h4>
                             <input type="text" className="share-items__form__content-step-3__input-localization" value={localizationSpecific} onChange={e=>changeLocalizationSpecific(e)} />
+                            <p className="wrong-info steps">{warningInfo}</p>
                         </form>
         )
     }
